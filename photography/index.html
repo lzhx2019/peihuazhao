@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵培桦 | 摄影作品</title>
+    <!-- Tailwind CSS -->
+    <script src="../assets/css/tailwindcss.css"></script>
+    <!-- Font Awesome -->
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* 语言切换按钮样式 */
+        .lang-btn {
+            padding: 4px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .lang-btn:hover {
+            background-color: #f5f5f5;
+        }
+        .lang-btn.active {
+            background-color: #333;
+            color: white;
+            border-color: #333;
+        }
+        body {
+            font-family: 'Noto Sans SC', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #333;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .photo-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 比例 */
+            overflow: hidden;
+        }
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .photo-item:hover .image-container img {
+            transform: scale(1.05);
+        }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <!-- 语言切换脚本 -->
+    <script src="../assets/js/language.js"></script>
+</head>
+<body class="min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center">
+                <a href="../index.html" class="text-2xl font-bold text-gray-800" data-lang-key="full-name">赵培桦</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="nav-link text-gray-600 hover:text-gray-900" data-lang-key="home">首页</a>
+                    <a href="../about/index.html" class="nav-link text-gray-600 hover:text-gray-900" data-lang-key="about">关于</a>
+                    <a href="index.html" class="nav-link text-gray-900 font-medium active" data-lang-key="photography">摄影</a>
+                    <a href="../video/index.html" class="nav-link text-gray-600 hover:text-gray-900" data-lang-key="video">影像</a>
+                    
+                    <!-- 语言切换 -->
+                    <div class="flex space-x-2 ml-4">
+                        <button id="lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                        <button id="lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+                        <i class="fa fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="../index.html" class="block py-2 text-gray-600 hover:text-gray-900 mobile-nav-link" data-lang-key="home">首页</a>
+                <a href="../about/index.html" class="block py-2 text-gray-600 hover:text-gray-900 mobile-nav-link" data-lang-key="about">关于</a>
+                <a href="index.html" class="block py-2 text-gray-900 font-medium mobile-nav-link active" data-lang-key="photography">摄影</a>
+                <a href="../video/index.html" class="block py-2 text-gray-600 hover:text-gray-900 mobile-nav-link" data-lang-key="video">影像</a>
+                
+                <!-- 移动端语言切换 -->
+                <div class="flex space-x-2 mt-2">
+                    <button id="mobile-lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="mobile-lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 md:px-6 py-12">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800" data-lang-key="photography-works">摄影作品集</h1>
+        
+        <!-- 作品展示 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 作品 1 -->
+            <div class="photo-item bg-white rounded-lg shadow-md overflow-hidden" data-category="风景摄影">
+                <div class="image-container">
+                    <img src="../images/beijing-snow.jpg" alt="北京 雪" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s ease;">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="photo-beijing-snow">北京 雪</h3>
+                    <a href="beijing-snow.html" class="inline-block mt-4 text-gray-800 hover:text-gray-600 transition-colors">
+                        <span data-lang-key="view-details">查看详情</span> <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 作品 2 -->
+            <div class="photo-item bg-white rounded-lg shadow-md overflow-hidden" data-category="人文纪实">
+                <div class="image-container">
+                    <img src="../images/children-stage.jpg" alt="台前的孩子" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s ease;">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="photo-children">台前的孩子</h3>
+                      <a href="children-on-stage.html" class="inline-block mt-4 text-gray-800 hover:text-gray-600 transition-colors">
+                          <span data-lang-key="view-details">查看详情</span> <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 作品 3 -->
+            <div class="photo-item bg-white rounded-lg shadow-md overflow-hidden" data-category="风景摄影">
+                <div class="image-container">
+                    <img src="../images/unknown-sea.jpg" alt="无人知晓 海" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s ease;">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="photo-unknown-sea">无人知晓 海</h3>
+                    <a href="unknown-sea.html" class="inline-block mt-4 text-gray-800 hover:text-gray-600 transition-colors">
+                        <span data-lang-key="view-details">查看详情</span> <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 作品 4 -->
+            <div class="photo-item bg-white rounded-lg shadow-md overflow-hidden" data-category="抽象摄影">
+                <div class="image-container">
+                    <img src="../images/columnar-joints.jpg" alt="柱状节理带" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s ease;">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="photo-columnar-joints">柱状节理带</h3>
+                    <a href="columnar-joints.html" class="inline-block mt-4 text-gray-800 hover:text-gray-600 transition-colors">
+                        <span data-lang-key="view-details">查看详情</span> <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 作品 5 -->
+            <div class="photo-item bg-white rounded-lg shadow-md overflow-hidden" data-category="风景摄影">
+                <div class="image-container">
+                    <img src="../images/desert-land.jpg" alt="漠土之上" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s ease;">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-lang-key="photo-desert-land">漠土之上</h3>
+                    <a href="desert-land.html" class="inline-block mt-4 text-gray-800 hover:text-gray-600 transition-colors">
+                        <span data-lang-key="view-details">查看详情</span> <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2"><span data-lang-key="full-name">赵培桦</span></h3>
+                    <p class="text-secondary" data-lang-key="footer-slogan">用镜头讲述故事</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="../about/index.html" class="footer-link" data-lang-key="about">个人简历</a>
+                    <a href="../photography/index.html" class="footer-link" data-lang-key="photography">摄影作品</a>
+                    <a href="index.html" class="footer-link" data-lang-key="video">音像作品</a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-lang-key="contact">联系方式</h3>
+                    <p class="text-gray-400 mb-2"><i class="fa fa-envelope mr-2"></i>Petersonzhao@gmail.com</p>
+                    <p class="text-gray-400 mb-2"><i class="fa fa-envelope mr-2"></i>183894368@qq.com</p>
+                    <p class="text-gray-400"><i class="fa fa-phone mr-2"></i> +86 15999683189</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-secondary text-sm">
+                <p>&copy; 2025 <span data-lang-key="full-name">赵培桦</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 筛选功能
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const photoItems = document.querySelectorAll('.photo-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 更新活跃按钮
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+                
+                // 筛选作品
+                photoItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // 图片懒加载和错误处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                // 设置错误处理
+                img.onerror = function() {
+                    console.log('图片加载失败，尝试使用备用图片:', this.src);
+                    // 如果加载失败，使用备用图片
+                    this.src = '/test-image.jpg';
+                    this.style.opacity = '1';
+                };
+                
+                // 确保图片可以加载
+                const src = img.src;
+                img.src = '';
+                setTimeout(() => {
+                    img.src = src;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

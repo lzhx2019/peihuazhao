@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵培桦 | 音像作品</title>
+    <!-- Tailwind CSS -->
+    <script src="../assets/css/tailwindcss.css"></script>
+    <!-- Font Awesome -->
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                        accent: '#999999',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- 语言切换脚本 -->
+    <script src="../assets/js/language.js"></script>
+</head>
+<body class="bg-white text-primary">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="../index.html" class="hover:text-secondary transition-custom"><span data-lang-key="full-name">赵培桦</span></a>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="nav-link" data-lang-key="home">首页</a>
+                <a href="../about/index.html" class="nav-link" data-lang-key="about">个人简历</a>
+                <a href="../photography/index.html" class="nav-link" data-lang-key="photography">摄影作品</a>
+                <a href="index.html" class="nav-link active" data-lang-key="video">音像作品</a>
+                
+                <!-- 语言切换 -->
+                <div class="flex space-x-2 ml-4">
+                    <button id="lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航 -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white py-4">
+                <div class="container mx-auto px-4 flex flex-col space-y-4">
+                    <a href="../index.html" class="mobile-nav-link" data-lang-key="home">首页</a>
+                    <a href="../about/index.html" class="mobile-nav-link" data-lang-key="about">个人简历</a>
+                    <a href="../photography/index.html" class="mobile-nav-link" data-lang-key="photography">摄影作品</a>
+                    <a href="index.html" class="mobile-nav-link active" data-lang-key="video">音像作品</a>
+                
+                <!-- 移动端语言切换 -->
+                <div class="flex space-x-2 mt-2">
+                    <button id="mobile-lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="mobile-lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <!-- 页面标题 -->
+            <section class="mb-16">
+                <h1 class="text-[clamp(2rem,4vw,3.5rem)] font-bold mb-6" data-lang-key="video-works">音像作品集</h1>
+                <div class="h-1 w-24 bg-primary rounded-full"></div>
+            </section>
+
+            <!-- 作品网格 -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 作品 1 -->
+                <div class="work-card" data-category="documentary">
+                    <a href="papa.html" class="block">
+                        <div class="relative overflow-hidden rounded-lg shadow-md mb-4">
+                            <img src="../portfolio/video-works/papa/posters/papa-poster-horizontal.jpg" alt="帕帕" class="w-full aspect-video object-cover hover-scale lazy-load">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-custom flex items-center justify-center opacity-0 hover:opacity-100">
+                                <div class="text-white text-xl font-semibold flex items-center">
+                                    <i class="fa fa-play-circle-o mr-2"></i>
+                                    <span data-lang-key="view-details">查看详情</span>
+                                </div>
+                            </div>
+                            <!-- 时长标签 -->
+                            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                                16:54
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-lang-key="video-papa">帕帕</h3>
+                        <p class="text-secondary mt-1"><span data-lang-key="video-documentary">剧情类短片</span></p>
+                    </a>
+                </div>
+
+                <!-- 作品 2 -->
+                <div class="work-card" data-category="short">
+                    <a href="party.html" class="block">
+                        <div class="relative overflow-hidden rounded-lg shadow-md mb-4">
+                            <img src="../portfolio/video-works/party/posters/feast-poster1.jpg" alt="聚会" class="w-full aspect-video object-cover hover-scale lazy-load">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-custom flex items-center justify-center opacity-0 hover:opacity-100">
+                                <div class="text-white text-xl font-semibold flex items-center">
+                                    <i class="fa fa-play-circle-o mr-2"></i>
+                                    <span data-lang-key="view-details">查看详情</span>
+                                </div>
+                            </div>
+                            <!-- 时长标签 -->
+                            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                                18:52
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-lang-key="video-party">聚会</h3>
+                        <p class="text-secondary mt-1"><span data-lang-key="video-short">悬疑类类短片</span></p>
+                    </a>
+                </div>
+
+                <!-- 作品 3 -->
+                <div class="work-card" data-category="experimental">
+                    <a href="murder.html" class="block">
+                        <div class="relative overflow-hidden rounded-lg shadow-md mb-4">
+                            <img src="../portfolio/video-works/murder/posters/murder-poster1.jpg" alt="谋杀" class="w-full aspect-video object-cover hover-scale lazy-load">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-custom flex items-center justify-center opacity-0 hover:opacity-100">
+                                <div class="text-white text-xl font-semibold flex items-center">
+                                    <i class="fa fa-play-circle-o mr-2"></i>
+                                    <span data-lang-key="view-details">查看详情</span>
+                                </div>
+                            </div>
+                            <!-- 时长标签 -->
+                            <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                                08:05
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-lang-key="video-murder">谋杀</h3>
+                        <p class="text-secondary mt-1"><span data-lang-key="video-experiment">恐怖类短片</span></p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2"><span data-lang-key="full-name">赵培桦</span></h3>
+                    <p class="text-secondary" data-lang-key="footer-slogan">用镜头讲述故事</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="../about/index.html" class="footer-link" data-lang-key="about">个人简历</a>
+                    <a href="../photography/index.html" class="footer-link" data-lang-key="photography">摄影作品</a>
+                    <a href="index.html" class="footer-link" data-lang-key="video">音像作品</a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-lang-key="contact">联系方式</h3>
+                    <p class="text-gray-400 mb-2"><i class="fa fa-envelope mr-2"></i>Petersonzhao@gmail.com</p>
+                    <p class="text-gray-400 mb-2"><i class="fa fa-envelope mr-2"></i>183894368@qq.com</p>
+                    <p class="text-gray-400"><i class="fa fa-phone mr-2"></i> +86 15999683189</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-secondary text-sm">
+                <p>&copy; 2025 <span data-lang-key="full-name">赵培桦</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // 筛选功能实现
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const workCards = document.querySelectorAll('.work-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // 更新按钮状态
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    // 筛选作品
+                    workCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            // 添加淡入动画
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.transition = 'opacity 0.3s ease';
+                                card.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 添加筛选按钮样式
+            const style = document.createElement('style');
+            style.textContent = `
+                .filter-btn {
+                    padding: 8px 16px;
+                    border: 1px solid #ddd;
+                    background-color: white;
+                    color: #666666;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                }
+                .filter-btn:hover {
+                    background-color: #f5f5f5;
+                }
+                .filter-btn.active {
+                    background-color: #333333;
+                    color: white;
+                    border-color: #333333;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

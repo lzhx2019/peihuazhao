@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵培桦 | 个人简历</title>
+    <!-- Tailwind CSS -->
+    <script src="../assets/css/tailwindcss.css"></script>
+    <!-- Font Awesome -->
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                        accent: '#999999',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- 语言切换脚本 -->
+    <script src="../assets/js/language.js"></script>
+</head>
+<body class="bg-white text-primary">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="../index.html" class="hover:text-secondary transition-custom" data-lang-key="full-name">赵培桦</a>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../index.html" class="nav-link" data-lang-key="home">首页</a>
+                <a href="index.html" class="nav-link active" data-lang-key="about">个人简历</a>
+                <a href="../photography/index.html" class="nav-link" data-lang-key="photography">摄影作品</a>
+                <a href="../video/index.html" class="nav-link" data-lang-key="video">音像作品</a>
+                
+                <!-- 语言切换 -->
+                <div class="flex space-x-2 ml-4">
+                    <button id="lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4">
+            <div class="container mx-auto px-4 flex flex-col space-y-4">
+                <a href="../index.html" class="mobile-nav-link" data-lang-key="home">首页</a>
+                <a href="index.html" class="mobile-nav-link active" data-lang-key="about">个人简历</a>
+                <a href="../photography/index.html" class="mobile-nav-link" data-lang-key="photography">摄影作品</a>
+                <a href="../video/index.html" class="mobile-nav-link" data-lang-key="video">音像作品</a>
+                
+                <!-- 移动端语言切换 -->
+                <div class="flex space-x-2 mt-2">
+                    <button id="mobile-lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="mobile-lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <!-- 页面标题 -->
+            <section class="mb-16">
+                <h1 class="text-[clamp(2rem,4vw,3.5rem)] font-bold mb-6" data-lang-key="resume">个人简历</h1>
+                <div class="h-1 w-24 bg-primary rounded-full"></div>
+            </section>
+
+            <!-- 个人信息部分 -->
+            <section class="mb-20">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="w-full md:w-1/3">
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <img src="../portfolio/decorative-images/2.jpg" alt="个人照片" class="w-full aspect-square object-cover hover-scale">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h2 class="text-2xl font-bold mb-6" data-lang-key="personal-info">个人信息</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-secondary mr-4 pt-1"><i class="fa fa-user"></i></div>
+                                <div>
+                                    <h3 class="font-semibold" data-lang-key="name">姓名</h3>
+                                    <p data-lang-key="full-name">赵培桦</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-secondary mr-4 pt-1"><i class="fa fa-envelope"></i></div>
+                                <div>
+                                    <h3 class="font-semibold" data-lang-key="email">邮箱</h3>
+                                    <p>Petersonzhao@gmail.com</p>
+                                    <p>183894368@qq.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-secondary mr-4 pt-1"><i class="fa fa-map-marker"></i></div>
+                                <div>
+                                    <h3 class="font-semibold" data-lang-key="location">所在地</h3>
+                                    <p data-lang-key="beijing-china">中国 北京</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-secondary mr-4 pt-1"><i class="fa fa-phone"></i></div>
+                                <div>
+                                    <h3 class="font-semibold" data-lang-key="phone">电话</h3>
+                                    <p>+86 15999683189</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 作品介绍 -->
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold mb-6" data-lang-key="work-intro-me">简介</h2>
+                <div class="prose max-w-none text-secondary space-y-6">
+                    <p data-lang-key="work-intro-me-desc1" class="indent-8 mb-4">我叫赵培桦，2003年出生于中国深圳，高中选择摄影专业，以摄影90分校招进入北京城市学院继续学习摄影专业，在大二学年因为热爱选择影视摄影与制作既导演专业，主修课程：影像摄影与制作，色彩与构成，电影曝光技巧，广告与MV拍摄，短片创作，影像声音工艺，影像后期精修，人像摄影，数字图像处理，多媒体影像创作，均分/绩点达到87，专业成绩第二。个人爱好影像创作，摄影，写作，绘画，烹饪，运动。能够熟练使用ADOBE软件PS、PR。可完成图片的后期加工与美化以及各类封面，海报或产品图的设计，使用Davinci、Final cut。可运用达芬奇，fcp等主流影像后期软件独立完成各类影像视频项目的剪辑，声音，调色一系列后期工作，以及使用主流摄像机，如SONY、CANON、NIKON、FUJI等和主流摄影机，如RAD、ARRI等。本人富有上进与学习的心态，能够快速吸收并接受新的文化与理念，在视觉艺术各领域有独特的创造力，并且热爱影像且具有一定的敏感度。另外，有独立完成项目以及挑战的经验，可以快速融入团队或者尽职尽责独立完成工作。</p>
+                </div>
+              <div class="prose max-w-none text-secondary space-y-6">
+                    <p data-lang-key="work-intro-me-desc2" class="indent-8 mb-4">我叫赵培桦，2003年出生于中国深圳，高中选择摄影专业，以摄影90分校招进入北京城市学院继续学习摄影专业，在大二学年因为热爱选择影视摄影与制作既导演专业，主修课程：影像摄影与制作，色彩与构成，电影曝光技巧，广告与MV拍摄，短片创作，影像声音工艺，影像后期精修，人像摄影，数字图像处理，多媒体影像创作，均分/绩点达到87，专业成绩第二。个人爱好影像创作，摄影，写作，绘画，烹饪，运动。能够熟练使用ADOBE软件PS、PR。可完成图片的后期加工与美化以及各类封面，海报或产品图的设计，使用Davinci、Final cut。可运用达芬奇，fcp等主流影像后期软件独立完成各类影像视频项目的剪辑，声音，调色一系列后期工作，以及使用主流摄像机，如SONY、CANON、NIKON、FUJI等和主流摄影机，如RAD、ARRI等。本人富有上进与学习的心态，能够快速吸收并接受新的文化与理念，在视觉艺术各领域有独特的创造力，并且热爱影像且具有一定的敏感度。另外，有独立完成项目以及挑战的经验，可以快速融入团队或者尽职尽责独立完成工作。</p>
+                </div>
+              <div class="prose max-w-none text-secondary space-y-6">
+                    <p data-lang-key="work-intro-me-desc3" class="indent-8 mb-4">我叫赵培桦，2003年出生于中国深圳，高中选择摄影专业，以摄影90分校招进入北京城市学院继续学习摄影专业，在大二学年因为热爱选择影视摄影与制作既导演专业，主修课程：影像摄影与制作，色彩与构成，电影曝光技巧，广告与MV拍摄，短片创作，影像声音工艺，影像后期精修，人像摄影，数字图像处理，多媒体影像创作，均分/绩点达到87，专业成绩第二。个人爱好影像创作，摄影，写作，绘画，烹饪，运动。能够熟练使用ADOBE软件PS、PR。可完成图片的后期加工与美化以及各类封面，海报或产品图的设计，使用Davinci、Final cut。可运用达芬奇，fcp等主流影像后期软件独立完成各类影像视频项目的剪辑，声音，调色一系列后期工作，以及使用主流摄像机，如SONY、CANON、NIKON、FUJI等和主流摄影机，如RAD、ARRI等。本人富有上进与学习的心态，能够快速吸收并接受新的文化与理念，在视觉艺术各领域有独特的创造力，并且热爱影像且具有一定的敏感度。另外，有独立完成项目以及挑战的经验，可以快速融入团队或者尽职尽责独立完成工作。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2"><span data-lang-key="full-name">赵培桦</span></h3>
+                    <p class="text-secondary" data-lang-key="footer-slogan">用镜头讲述故事</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="../about/index.html" class="footer-link" data-lang-key="about">个人简历</a>
+                    <a href="../photography/index.html" class="footer-link" data-lang-key="photography">摄影作品</a>
+                    <a href="index.html" class="footer-link" data-lang-key="video">音像作品</a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4" data-lang-key="contact">联系方式</h3>
+                    <p class="text-gray-400 mb-2"><i class="fa fa-envelope mr-2"></i>Petersonzhao@gmail.com</p>
+                    <p class="text-gray-400 mb-2"><i class="fa fa-envelope mr-2"></i>183894368@qq.com</p>
+                    <p class="text-gray-400"><i class="fa fa-phone mr-2"></i> +86 15999683189</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-secondary text-sm">
+                <p>&copy; 2025 <span data-lang-key="full-name">赵培桦</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/language.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

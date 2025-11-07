@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵培桦 | 摄影作品</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .photo-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 75%; /* 4:3 比例 */
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>摄影作品集</h1>
+    
+    <div class="gallery">
+        <!-- 作品 1 - 使用简化路径 -->
+        <div class="photo-item">
+            <div class="image-container">
+                <img id="img1" src="../test-image.jpg" alt="北京 雪" loading="eager">
+            </div>
+            <h3>北京 雪</h3>
+            <p>2023 | 风景摄影</p>
+        </div>
+        
+        <!-- 作品 2 - 暂用相同图片 -->
+        <div class="photo-item">
+            <div class="image-container">
+                <img id="img2" src="../test-image.jpg" alt="台前的孩子" loading="eager">
+            </div>
+            <h3>台前的孩子</h3>
+            <p>2022 | 人文纪实</p>
+        </div>
+        
+        <!-- 作品 3 - 暂用相同图片 -->
+        <div class="photo-item">
+            <div class="image-container">
+                <img id="img3" src="../test-image.jpg" alt="无人知晓 海" loading="eager">
+            </div>
+            <h3>无人知晓 海</h3>
+            <p>2023 | 风景摄影</p>
+        </div>
+        
+        <!-- 作品 4 - 暂用相同图片 -->
+        <div class="photo-item">
+            <div class="image-container">
+                <img id="img4" src="../test-image.jpg" alt="柱状节理带" loading="eager">
+            </div>
+            <h3>柱状节理带</h3>
+            <p>2022 | 抽象摄影</p>
+        </div>
+        
+        <!-- 作品 5 - 暂用相同图片 -->
+        <div class="photo-item">
+            <div class="image-container">
+                <img id="img5" src="../test-image.jpg" alt="漠土之上" loading="eager">
+            </div>
+            <h3>漠土之上</h3>
+            <p>2021 | 风景摄影</p>
+        </div>
+    </div>
+    
+    <a href="../index.html" class="back-link">返回首页</a>
+    
+    <script>
+        // 图片加载事件处理
+        function setupImageEvents() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                img.onload = function() {
+                    console.log('图片加载成功:', img.id);
+                };
+                
+                img.onerror = function() {
+                    console.error('图片加载失败:', img.id);
+                    // 如果加载失败，尝试重新加载
+                    setTimeout(() => {
+                        const originalSrc = img.src;
+                        img.src = '';
+                        img.src = originalSrc;
+                    }, 500);
+                };
+            });
+        }
+        
+        // 页面加载完成后设置事件
+        document.addEventListener('DOMContentLoaded', setupImageEvents);
+    </script>
+</body>
+</html>

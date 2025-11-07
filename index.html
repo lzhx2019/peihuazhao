@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵培桦 | 个人网站</title>
+    <!-- Tailwind CSS -->
+    <script src="assets/css/tailwindcss.css"></script>
+    <!-- Font Awesome -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                        accent: '#999999',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- 语言切换脚本 -->
+    <script src="assets/js/language.js"></script>
+</head>
+<body class="bg-white text-primary">
+    <!-- 导航栏 -->
+    <header class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="hover:text-secondary transition-custom" data-lang-key="full-name">赵培桦</a>
+            </div>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link active" data-lang-key="home">首页</a>
+                <a href="about/index.html" class="nav-link" data-lang-key="about">个人简历</a>
+                <a href="photography/index.html" class="nav-link" data-lang-key="photography">摄影作品</a>
+                <a href="video/index.html" class="nav-link" data-lang-key="video">音像作品</a>
+                
+                <!-- 语言切换 -->
+                <div class="flex space-x-2 ml-4">
+                    <button id="lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航 -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white py-4">
+                <div class="container mx-auto px-4 flex flex-col space-y-4">
+                    <a href="index.html" class="mobile-nav-link active" data-lang-key="home">首页</a>
+                    <a href="about/index.html" class="mobile-nav-link" data-lang-key="about">个人简历</a>
+                    <a href="photography/index.html" class="mobile-nav-link" data-lang-key="photography">摄影作品</a>
+                    <a href="video/index.html" class="mobile-nav-link" data-lang-key="video">音像作品</a>
+                
+                <!-- 移动端语言切换 -->
+                <div class="flex space-x-2 mt-2">
+                    <button id="mobile-lang-zh" class="lang-btn active" data-lang="zh-CN">中</button>
+                    <button id="mobile-lang-en" class="lang-btn" data-lang="en-US">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="pt-24 pb-16">
+        <div class="container mx-auto px-4">
+            <!-- 英雄区域 -->
+            <section class="flex flex-col md:flex-row items-center justify-between gap-12 mb-24">
+                <div class="w-full md:w-1/2">
+                    <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6">
+                        <span data-lang-key="hero-title">探索视觉与影像的艺术世界</span>
+                    </h1>
+                    <p class="text-lg text-secondary mb-8 max-w-lg">
+                        <span data-lang-key="hero-description">通过摄影与影像作品，记录生活瞬间，表达内心世界，传递独特视角。</span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="photography/index.html" class="btn-primary" data-lang-key="btn-explore-photo">探索摄影作品</a>
+                        <a href="video/index.html" class="btn-secondary" data-lang-key="btn-explore-video">浏览音像作品</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="aspect-square relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="portfolio/decorative-images/1.jpg" alt="装饰图片" class="w-full h-full object-cover hover-scale lazy-load">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 作品集预览 -->
+            <section class="mb-24">
+                <div class="flex justify-between items-center mb-12">
+                    <h2 class="text-3xl font-bold" data-lang-key="featured-works">精选作品</h2>
+                    <a href="photography/index.html" class="text-primary hover:text-secondary transition-custom" data-lang-key="view-all">查看全部 <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 摄影作品预览 1 -->
+                    <a href="photography/beijing-snow.html" class="group">
+                        <div class="relative overflow-hidden rounded-lg shadow-md mb-4">
+                            <img src="portfolio/photography-works/beijing-snow/1.jpg" alt="北京 雪" class="w-full aspect-[4/3] object-cover transition-all duration-500 group-hover:scale-105 lazy-load">
+                        </div>
+                        <h3 class="text-xl font-semibold" data-lang-key="photo-beijing-snow">北京 雪</h3>
+                        <p class="text-secondary mt-1" data-lang-key="photography">摄影作品</p>
+                    </a>
+                    
+                    <!-- 摄影作品预览 2 -->
+                    <a href="photography/children-on-stage.html" class="group">
+                        <div class="relative overflow-hidden rounded-lg shadow-md mb-4">
+                            <img src="portfolio/photography-works/children-on-stage/1.jpg" alt="台前的孩子" class="w-full aspect-[4/3] object-cover transition-all duration-500 group-hover:scale-105 lazy-load">
+                        </div>
+                        <h3 class="text-xl font-semibold" data-lang-key="photo-children">台前的孩子</h3>
+                        <p class="text-secondary mt-1" data-lang-key="photography">摄影作品</p>
+                    </a>
+                    
+                    <!-- 音像作品预览 -->
+                    <a href="video/papa.html" class="group">
+                        <div class="relative overflow-hidden rounded-lg shadow-md mb-4">
+                            <img src="portfolio/video-works/papa/posters/papa-poster-horizontal.jpg" alt="帕帕" class="w-full aspect-[4/3] object-cover transition-all duration-500 group-hover:scale-105 lazy-load">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fa fa-play-circle text-white text-4xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-lang-key="video-papa">帕帕</h3>
+                        <p class="text-secondary mt-1" data-lang-key="video">音像作品</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 关于简介 -->
+            <section class="mb-16">
+                <div class="bg-gray-50 rounded-2xl p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row gap-12 items-center">
+                        <div class="w-full md:w-2/3">
+                            <h2 class="text-3xl font-bold mb-6" data-lang-key="about-intro">关于我</h2>
+                            <p class="text-secondary mb-6" data-lang-key="about-brief">我是一位专注于摄影与影像创作的艺术家，通过视觉语言表达对世界的观察和思考。我的作品涉及多个领域，包括人文纪实、风景摄影以及实验影像。</p>
+                            <a href="about/index.html" class="btn-secondary" data-lang-key="btn-read-more">了解更多</a>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <img src="portfolio/decorative-images/2.jpg" alt="个人照片" class="rounded-lg shadow-lg hover-scale lazy-load">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2"><span data-lang-key="full-name">赵培桦</span></h3>
+                    <p class="text-secondary" data-lang-key="footer-slogan">用镜头讲述故事</p>
+                </div>
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="about/index.html" class="footer-link" data-lang-key="about">个人简历</a>
+                    <a href="photography/index.html" class="footer-link" data-lang-key="photography">摄影作品</a>
+                    <a href="video/index.html" class="footer-link" data-lang-key="video">音像作品</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-behance"></i></a>
+                    <a href="#" class="social-icon"><i class="fa fa-vimeo"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-secondary text-sm">
+                <p>&copy; 2025 <span data-lang-key="full-name">赵培桦</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
