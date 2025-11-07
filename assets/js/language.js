@@ -238,7 +238,7 @@ var translations = {
         'exhibitions': 'Exhibitions',
         'awards': 'Awards',
         'name': 'Name',
-        'full-name': 'ZHAO Peihua',
+        'full-name': 'Peihua ZHAO',
         'beijing-china': 'Beijing, China',
         'email': 'Email',
         'phone': 'Phone',
