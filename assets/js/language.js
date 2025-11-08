@@ -3,12 +3,12 @@ var translations = {
     'zh-CN': {
         about: '个人简历',
         photography: '摄影作品',
-        video: '音像作品',
+        video: '影像作品',
         home: '首页',
         'hero-title': '探索视觉与影像的艺术世界',
         'hero-description': '通过摄影与影像作品，记录生活瞬间，表达内心世界，传递独特视角。',
         'btn-explore-photo': '探索摄影作品',
-        'btn-explore-video': '浏览音像作品',
+        'btn-explore-video': '浏览影像作品',
         'featured-works': '精选作品',
         'view-all': '查看全部',
         'photo-beijing-snow': '北京 雪',
@@ -64,8 +64,8 @@ var translations = {
         'photo-unknown-sea-para1':'海边曾是人们度假的地方，沙滩，阳光，海浪，遮阳伞下是人们洋溢的幸福，沙子上是人们热烈的快乐，这里承载着太多太多的回忆，直到城市迁徙，沙于土的边界渐渐消逝，它的身上建起高架，车来车往，它的存在也渐渐消逝。它的回忆定格在某个下午，人们看着夕阳落下站起身来，孩子们牵着大人的手将玩具丢在一旁。时间荏苒，好像什么都没发生，只是它还在哪里，它的回忆却不见了。',
         'photo-columnar-joints-para1':'柱状节理带是发育于火山岩中的原生破裂构造，由岩浆对海水对撞产生，冷却后的岩石一点一点蔓延，全新的崖壁诞生。冷却后柱状岩石依然被冰冷的海水冲击，再次留下腐蚀的痕迹，它是毁灭中的新生，也是存在中的消逝。',
         'photo-desert-land-para1':'内蒙古自治区，位于中国北部，总面积118.3万平方千米，内蒙古土地辽阔、资源丰富，草原、森林和人均耕地面积居全中国第一，同时也是中国最大的草原牧区。这里生出了中国最盎然的草场，很多人说广阔的土地上生不出贫瘠的爱，这片土地就如这般孕育出内蒙这片天地，在这里有成群的牛羊在牧草上漫步，也有结对的马匹在草原上奔腾，一切好像峭壁上冉冉升起的红日，热烈又坦荡。',
-        // 音像作品页面
-        'video-works': '音像作品集',
+        // 影像作品页面
+        'video-works': '影像作品集',
         'video-filter': '筛选类别',
         'video-short': '悬疑类类短片',
         'video-experiment': '恐怖类短片',
@@ -223,7 +223,7 @@ var translations = {
         'photo-unknown-sea-para1':'The seaside was once a vacation spot. With sandy beaches, sunshine, and ocean waves, happiness filled the air under sun umbrellas, and joy abounded on the sand. This place carried countless memories—until the city’s relocation began. The boundary between sand and soil gradually faded; elevated roads were built over it, with cars coming and going, and its very existence slowly vanished. Its memories are frozen in a certain afternoon: people watched the sunset, then stood up; children held adults’ hands and left their toys aside. As time passes, it seems as if nothing has happened. It is still there, yet its memories are gone.',
         'photo-columnar-joints-para1':'The Columnar Joint Zone is a primary fracture structure developed in volcanic rocks, formed by the collision of magma with seawater. After cooling, the rock spreads gradually, giving birth to an entirely new cliff face. The cooled columnar rocks are still impacted by the icy seawater, which leaves traces of erosion once again. It represents rebirth amid destruction and dissipation amid existence.',
         'photo-desert-land-para1':'The Inner Mongolia Autonomous Region is located in northern China, with a total area of 1.183 million square kilometers. It boasts vast land and abundant resources, ranking first in China in terms of grassland area, forest area and per capita cultivated land area. It is also China’s largest grassland pastoral area. This land nurtures China’s most vibrant grasslands. Many people say that no barren love can grow on a vast land, and this land is exactly like that—it fosters the world of Inner Mongolia. Here, herds of cattle and sheep wander on the pastures, and pairs of horses gallop across the grasslands. Everything is like the red sun rising slowly from the steep cliffs, warm and unreserved.',
-        // 音像作品页面
+        // 影像作品页面
         'video-works': 'Video Works',
         'video-filter': 'Filter Categories',
         'video-short': 'Short Film',
